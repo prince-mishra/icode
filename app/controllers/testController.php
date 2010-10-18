@@ -36,8 +36,21 @@
 	class testController extends Controller {
 
 		public function base() {
-			$group = $_POST['groupname'];
-			display($group);			
+			//$group = $_POST['groupname'];
+			//display($group);			
+		}
+		public function testform() {
+			if(isset($_POST['groupname'])) {
+			//	$requests = new requests($this->getDB());	
+				$new_request['group']= $_POST['groupname'];
+				$new_request['repo'] = $_POST['reponame'];
+				$new_request['user'] = $_POST['username'];
+			//	$requests->insert($new_request);
+			
+			
+			display($new_request);
+			$this->base();
+			}
 		}
 	
 

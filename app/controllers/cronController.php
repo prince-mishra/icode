@@ -143,12 +143,33 @@
 			}
 		}
 		
+		
 		public function info() {
 			$git = new Git();
 			$repo = 'Generatrix';
 			$info=$git->get_project_info($repo);
 			display($info);
 		}
+		public function write() {
+			$git = new Git();
+			$sampleData = array(
+			'first' => array(
+                   	'first-1' => 1,
+                    	'first-2' => 2,
+                    	'first-3' => 3,
+                    	'first-4' => 4,
+                    	'first-5' => 5,
+                	),
+                	'second' => array(
+                   	 'second-1' => 1,
+                    	'second-2' => 2,
+                    	'second-3' => 3,
+                   	 'second-4' => 4,
+                    	'second-5' => 5,
+                	));
+			$git->write_ini_file($sampleData, '/var/www/gitrepos/data.conf', true);
+		}
+		
 		public function search() {
 		$git = new Git();
 		$repo = 'Generatrix';

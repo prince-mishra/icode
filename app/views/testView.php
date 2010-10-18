@@ -41,12 +41,7 @@
 				"js" : [ ]
 			}');
 
-			$content = '<form method="post">
-				Group Name :<input type = textbox name = "groupname" value = ""><br />
-				Repo Name :<input type = textbox name = "reponame" value = ""><br />
-				UserName :<input type = textbox name = "username" value = ""><br />
-				<input type = submit name = "submit">
-			</form>';
+			$content = 'This is the default base';
 			//$content .= $this->loadSubView('header');
 			//$content .= $this->loadSubView('body');
 			//$content .= $this->loadSubView('footer');
@@ -54,6 +49,17 @@
 		///	display($sampleview);
 		//	$this->set("contrText","some text for controller");
 				
+			$this->getBody()->appendContent($content);
+
+			return $this->endPage();
+		}
+		public function testform() {
+			$content = '<form method="post">
+				Group Name :<input type = textbox name = "groupname" value = ""><br />
+				Repo Name :<input type = textbox name = "reponame" value = ""><br />
+				UserName :<input type = textbox name = "username" value = ""><br />
+				<input type = submit name = "submit">
+			</form>';
 			$this->getBody()->appendContent($content);
 
 			return $this->endPage();

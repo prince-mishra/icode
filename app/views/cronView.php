@@ -54,6 +54,8 @@
 		}
 		public function commits() {
 		}
+		public function write() {
+		}
 		public function tree() {
 		}
 		public function branch() {
