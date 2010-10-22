@@ -55,6 +55,11 @@
 		public function commits() {
 		}
 		public function write() {
+			$content = '<form method=post>
+				Repo Name : <input type=text name="reponame"><br />
+				<input type="submit" name = "submit">';
+			$this->getBody()->appendContent($content);
+			return $this->endPage();
 		}
 		public function tree() {
 		}

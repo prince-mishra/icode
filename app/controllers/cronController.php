@@ -152,7 +152,7 @@
 		}
 		public function write() {
 			$git = new Git();
-			$sampleData = array(
+		/*	$sampleData = array(
 			'first' => array(
                    	'first-1' => 1,
                     	'first-2' => 2,
@@ -166,8 +166,12 @@
                     	'second-3' => 3,
                    	 'second-4' => 4,
                     	'second-5' => 5,
-                	));
-			$git->write_ini_file($sampleData, '/var/www/gitrepos/data.conf', true);
+                	));*/
+                	if(isset($_POST['reponame'])) {
+                		$sampleData = array('group newteam' => array('writable' => $_POST['reponame'],'members' => 'prince@prince-laptop'));
+                		$git->write_ini_file($sampleData, './newdata.conf', true);
+                	}
+			
 		}
 		
 		public function search() {
