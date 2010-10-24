@@ -39,6 +39,9 @@
 			$repositories = new repositories($this->getDb());
 			$repositories = $repositories->select('*');
 			$this->set('repos', $repositories);
+			$commits = new commits($this->getDb());
+			$commits = $commits->select('*','ORDER BY committer_time DESC');
+			$this->set('commits', $commits);
 		}
 
 	}

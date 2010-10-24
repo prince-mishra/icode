@@ -44,7 +44,7 @@
 			$content = '';
 			//$content .= $this->loadSubView('header');
 			$content .= $this->loadSubView('projectsBase');
-			//$content .= $this->loadSubView('footer');
+			$content .= $this->loadSubView('projectsRecentCommits');
 
 			$this->getBody()->appendContent($content);
 
